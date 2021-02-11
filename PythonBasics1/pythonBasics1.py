@@ -9,8 +9,13 @@
 # and returns the number of times the given character appears in the string
 def count_char(s, char):
   # YOUR CODE HERE
-
-  return
+  # Variables + Constants.
+  x = 0; # Char Count.
+  
+  for pos in s:
+      if pos == char: x += 1;
+  
+  return x;
 
 # Part B. is_power_of
 # Define a function is_power_of(i,j) that takes 2 ints i and j
