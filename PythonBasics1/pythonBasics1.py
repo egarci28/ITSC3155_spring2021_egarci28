@@ -12,9 +12,10 @@ def count_char(s, char):
   # Variables + Constants.
   x = 0; # Char Count.
   
+  # Count chars.
   for pos in s:
       if pos == char: x += 1;
-  
+  # Return total char count.
   return x;
 
 # Part B. is_power_of
@@ -24,8 +25,10 @@ def count_char(s, char):
 # otherwise return False
 def is_power_of(i,j):
   # YOUR CODE HERE
+  # Initial Check.
   if (i == j): return True;
   
+  # Check if power of int.
   for x in range(0, 1000, 1):     
       if (i**x) == j: return True;
       if (i**x) > j and i > 0: return False;
@@ -39,5 +42,23 @@ def is_power_of(i,j):
 # if s is an empty string return an empty string
 def longest_word(s):
   # YOUR CODE HERE
-
-  return
+  # Variables + Constants.
+  x = 0; # Current word length
+  x1 = 0; # Longest word length
+  start = 0; # Start position.
+  count = 0; # Array count.
+  
+  # Check the string.
+  for pos in s:
+      if x >= x1: 
+          x1 = x;
+          start = count - x1;
+      if pos != ' ': x += 1;
+      else: x = 0;
+      count += 1;
+  
+  if x >= x1: 
+      x1 = x;
+      start = count - x1;
+      
+  return s[start:start+x1];
