@@ -12,13 +12,14 @@
 
 def count_threes(n):
   # YOUR CODE HERE
-  x = 0;
-  x1 = 0;
+  x = 0; # Hold the number of threes.
+  x1 = 0; # Use to count from 0 to n.
   while x1 < n:
       x1 = 3 + x1;
       if x1 <= n:
           x += 1;
-  return x;
+  return x; 
+  
 
 
 # Part B. longest_consecutive_repeating_char
@@ -26,9 +27,27 @@ def count_threes(n):
 # a string s and returns the character that has the longest consecutive repeat.
 def longest_consecutive_repeating_char(s):
   # YOUR CODE HERE
-
-  return
-
+  currentCharCount = 0;
+  currentChar = s[0];
+  longestCharCount = 0;
+  longestChar = s[0];
+  count = 0;
+  
+  for i in s:   
+     if currentChar != i:
+         currentChar = i;
+         currentCharCount = 0;
+         currentChar = i;
+     if longestCharCount < currentCharCount:
+         longestCharCount = currentCharCount;
+         longestChar = i; 
+     currentCharCount += 1;
+     count += 1;
+      
+  return longestChar;
+  '''
+  EG28
+  '''
 
 # Part C. is_palindrome
 # Define a function is_palindrome(s) that takes a string s
