@@ -45,9 +45,7 @@ def longest_consecutive_repeating_char(s):
      count += 1;
       
   return longestChar;
-  '''
-  EG28
-  '''
+  
 
 # Part C. is_palindrome
 # Define a function is_palindrome(s) that takes a string s
@@ -57,5 +55,18 @@ def longest_consecutive_repeating_char(s):
 # and ignore spaces (i.e. case insensitive).
 def is_palindrome(s):
   # YOUR CODE HERE
-
-  return
+  
+  s.lower(); # Convert string to lowercase.
+  x = True;
+  count = len(s)-1;
+  for i in s:
+    if i.lower() != s[count].lower() and 'z' >= i >= 'a' and 'z' >= s[count] >= 'a':
+        x = False;
+        break;
+    count -= 1;
+  return x;
+  
+    
+  '''
+  EG28
+  '''
