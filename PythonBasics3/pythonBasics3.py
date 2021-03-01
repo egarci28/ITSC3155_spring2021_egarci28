@@ -37,5 +37,16 @@ def ends_with_number(s):
 # Note: Be sure it returns false if the string is not a valid binary number!
 # Hint: Use regular expressions to match for the pattern of a binary number that is a multiple of 6.
 def binary_multiple_of_6(s):
+    x = True;
+    
+    for x in str(s):
+        if x != '0' and  x!= '1':
+            x = False;
+            return x;
+        
+    if int(str(s), 2) % 6 != 0:
+        x = False;
+        return x;
 
-  return s
+    return True;
+
