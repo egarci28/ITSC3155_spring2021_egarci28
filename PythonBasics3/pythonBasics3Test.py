@@ -34,7 +34,11 @@ class TestPythonBasicsOne(unittest.TestCase):
         self.assertEqual(pythonBasics3.ends_with_number("Blue plus purple equals 5"), True)
 
         # Please add three more test cases following the order above
+        self.assertEqual(pythonBasics3.ends_with_number("This ends in a number 1"), True)
 
+        self.assertEqual(pythonBasics3.ends_with_number("The cups have soda"), False)
+
+        self.assertEqual(pythonBasics3.ends_with_number("The wood was used for a table"), False)
 
 #Test case for binary_multiple_of_6
     def test_binary_multiple_of_6(self):

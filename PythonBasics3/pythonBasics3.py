@@ -14,21 +14,21 @@ import re
 # Note: Be sure to use RegEx and it works for both upper and lower case and for nonletters!
 
 def ends_with_consonant(s):
+    x = True;
+    if re.search("[aeiou]$", s):
+        x = False;
+    return x;
 
-
-  return
-
-
-
-
- # Part B. ends_with_number
+# Part B. ends_with_number
 # Define a function ends _with_number(s) that takes a string and returns true
 # if it ends with a number and false otherwise.
 # (For our purposes, a number is any character that is 0,1,2,3,4,5,6,7,8, or 9.)
 # Note: Be sure to use RegEx!
 def ends_with_number(s):
-
-  return
+    x = False;
+    if re.search("\d$", s):
+        x = True;
+    return x;
 
 
 # Part C. binary_multiple_of_6
