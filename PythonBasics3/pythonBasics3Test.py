@@ -16,6 +16,11 @@ class TestPythonBasicsOne(unittest.TestCase):
         self.assertEqual(pythonBasics3.ends_with_consonant("Do I know how old you are you"), False)
 
         # Please add three more test cases following the order above
+        self.assertEqual(pythonBasics3.ends_with_consonant("This ends in a consonant"), True)
+
+        self.assertEqual(pythonBasics3.ends_with_consonant("The fridge holds sodas"), True)
+
+        self.assertEqual(pythonBasics3.ends_with_consonant("You can pour soda into the cup"), True)
 
 #Test case for ends_with_number
     def test_ends_with_number(self):
@@ -41,8 +46,6 @@ class TestPythonBasicsOne(unittest.TestCase):
         self.assertEqual(pythonBasics3.binary_multiple_of_6("111111"), False)
 
         self.assertEqual(pythonBasics3.binary_multiple_of_6("3"), False)
-
-
 
 if __name__ == '__main__':
 
