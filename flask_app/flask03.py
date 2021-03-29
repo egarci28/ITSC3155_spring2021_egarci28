@@ -13,7 +13,7 @@ app = Flask(__name__)     # create an app
 # get called. What it returns is what is shown as the web page
 @app.route('/index')
 def index():
-    a_user = {'name': 'Eliseo', 'email':'mogli@uncc.edu'}
+    a_user = {'name': 'Eliseo', 'email':'email'}
     return render_template('index.html', user = a_user)
 @app.route('/notes')
 def getnotes():
@@ -29,6 +29,10 @@ def getnote(note_id):
              3: {'title': 'Third Note', 'text': 'This is my third note', 'date': '10-3-2020'}
             }
     return render_template('note.html', note = notes[int(note_id)])
+@app.route('/notes/new') 
+def newnote(): 
+    a_user = {'name': 'Eliseo', 'email':'email'}
+    return render_template('new.html', user=a_user)
 
 app.run(host=os.getenv('IP', '127.0.0.1'),port=int(os.getenv('PORT', 5000)),debug=True)
 
