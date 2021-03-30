@@ -26,19 +26,19 @@ with app.app_context():
 # get called. What it returns is what is shown as the web page
 @app.route('/index')
 def index():
-    a_user =  db.session.query(User).filter_by(email='email')
+    a_user =  db.session.query(User).filter_by(email='email').one()
     
     return render_template('index.html', user = a_user)
 @app.route('/notes')
 def getnotes():
-    a_user = db.session.query(User).filter_by(email='email')
+    a_user = db.session.query(User).filter_by(email='email').one()
     my_notes = db.session.query(Note).all()            
     
     return render_template('notes.html', notes = my_notes, user = a_user)
 @app.route('/notes/<note_id>')
 def getnote(note_id):
-    a_user = db.session.query(User).filter_by(email='email')
-    my_notes = db.session.query(Note).filter_by(id=note_id)    
+    a_user = db.session.query(User).filter_by(email='email').one()
+    my_notes = db.session.query(Note).filter_by(id=note_id).one()  
     
     return render_template('note.html', note = my_notes, user = a_user)
 @app.route('/notes/new', methods = ['GET', 'POST']) 
@@ -60,7 +60,7 @@ def newnote():
         db.session.commit()    
         return redirect(url_for('getnotes', name = a_user))
     else: 
-        a_user = db.session.query(User).filter_by(email='email')
+        a_user = db.session.query(User).filter_by(email='email').one()
         return render_template('new.html', user=a_user)
 app.run(host=os.getenv('IP', '127.0.0.1'),port=int(os.getenv('PORT', 5000)),debug=True)
 
