@@ -37,6 +37,7 @@ def getnotes():
     return render_template('notes.html', notes = my_notes, user = a_user)
 @app.route('/notes/<note_id>')
 def getnote(note_id):
+    # Get Notes.
     a_user = db.session.query(User).filter_by(email='email').one()
     my_notes = db.session.query(Note).filter_by(id=note_id).one()  
     
