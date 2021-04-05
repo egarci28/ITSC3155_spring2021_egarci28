@@ -42,6 +42,15 @@ def getnote(note_id):
     my_notes = db.session.query(Note).filter_by(id=note_id).one()  
     
     return render_template('note.html', note = my_notes, user = a_user)
+@app.route('/notes/edit/<note_id>')
+def updatenote(note_id):
+    # Get Request - Show new note form to edit note.
+    # Retrieve user from database.
+    a_user = db.session.query(User).filter_by(email='email').one()
+    # Retrieve note from database.
+    my_notes = db.session.query(Note).filter_by(id=note_id).one()  
+    
+    return render_template('new.html', note = my_notes, user = a_user)
 @app.route('/notes/new', methods = ['GET', 'POST']) 
 def newnote(): 
     a_user = {'name': 'Eliseo', 'email':'email'}
