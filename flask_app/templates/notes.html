@@ -33,8 +33,9 @@
                 <td><a href="{{ url_for('updatenote', note_id=note.id) }}">Edit</a></td>
                 <td>
                     <form action="{{ url_for('deletenote', note_id=note.id) }}" method="post">
-                        <input type="submit" value = "Delete">
+                        <input type="submit" value="Delete">
                     </form>
+                </td>
             </tr>
             {% endfor %}
             
