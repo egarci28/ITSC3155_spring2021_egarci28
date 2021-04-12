@@ -11,7 +11,17 @@
             <nav>
                 <a href="{{ url_for('index') }}"> Home</a> ||
                 <a href="{{ url_for('getnotes') }}"> My Notes</a> ||
-                <a href="{{ url_for('newnote') }}">Add Note</a>
+                <a href="{{ url_for('newnote') }}">Add Note</a> ||
+                {% if user %} 
+                    <nav> 
+                        <a href="{{url_for('logout')}}">Logout</a> ||
+                    </nav> 
+                {% else %}
+                    <nav> 
+                        <a href="{{url_for('login')}}">Sign In</a> ||
+                        <a href="{{url_for('register')}}">Register</a>
+                    </nav>
+                {% endif %}
             </nav>
         </div>
 
