@@ -145,7 +145,6 @@ def register():
     return render_template('register.html', form=form)
 @app.route('/login', methods=['POST', 'GET'])
 def login():
-    # Login.
     login_form = LoginForm()
     # validate_on_submit only validates using POST
     if login_form.validate_on_submit():
